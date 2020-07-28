@@ -20,11 +20,11 @@ class TestOptions:
         self.parser.add_argument('--random_mask', type=int, default=0,
                                  help='using random mask')
 
-        self.parser.add_argument('--img_shapes', type=str, default='256,256,3',
+        self.parser.add_argument('--img_shapes', type=str, default='512,512,3',
                                  help='given shape parameters: h,w,c or h,w')
         self.parser.add_argument('--mask_shapes', type=str, default='128,128',
                                  help='given mask parameters: h,w')
-        self.parser.add_argument('--mask_type', type=str, default='rect')
+        self.parser.add_argument('--mask_type', type=str, default='stroke')
         self.parser.add_argument('--test_num', type=int, default=-1)
         self.parser.add_argument('--mode', type=str, default='save')
 

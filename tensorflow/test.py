@@ -17,12 +17,13 @@ config = TestOptions().parse()
 if os.path.isfile(config.dataset_path):
     pathfile = open(config.dataset_path, 'rt').read().splitlines()
 elif os.path.isdir(config.dataset_path):
-    pathfile = glob.glob(os.path.join(config.dataset_path, '*.png'))
+    pathfile = glob.glob(os.path.join(config.dataset_path, '*.jpg'))
 else:
     print('Invalid testing data file/folder path.')
     exit(1)
 total_number = len(pathfile)
-test_num = total_number if config.test_num == -1 else min(total_number, config.test_num)
+#test_num = total_number if config.test_num == -1 else min(total_number, config.test_num)
+test_num = 1000
 print('The total number of testing images is {}, and we take {} for test.'.format(total_number, test_num))
 
 model = GMCNNModel()
